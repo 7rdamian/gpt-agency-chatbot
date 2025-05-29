@@ -19,22 +19,6 @@ One or more plain text documents (UTF-8 encoded)
 - Python back-end using LangChain
 
 
-## Project Structure
-
-chatbot/
-├── app/
-│ ├── rag.py # RAG pipeline: embeddings, vector DB, LLM
-│ └── load_docs.py # Loads, chunks, embeds user documents
-├── static/
-│ └── style.css # Simple CSS for the front-end
-├── templates/
-│ └── index.html # HTML interface for asking questions
-├── .env # Environment variables (e.g. API key)
-├── main.py # Flask app that handles requests
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
-
-
 ## Tech Stack
 
 | Part              | Library / Tool                          |
