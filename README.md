@@ -87,7 +87,7 @@ python main.py
 ### Then visit http://127.0.0.1:5000 in your browser.
 
 It should look something like this:
-![Chatbot UI](docs/image-1.png)
+![Chatbot UI](docs/image.png)
 
 
 ## Credits:
