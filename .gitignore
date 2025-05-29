@@ -1,0 +1,5 @@
+.env
+app/__pycache__/
+*.pyc
+db/
+user_documents.txt
