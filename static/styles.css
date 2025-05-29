@@ -1,86 +1,78 @@
-/* body {
-  font-family: sans-serif;
-  background: #f4f4f4;
-  padding: 20px;
-}
-.container {
-  max-width: 600px;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-}
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-button {
-  padding: 10px 20px;
-  font-weight: bold;
-  background: #333;
-  color: white;
-  border: none;
-  border-radius: 6px;
-}
-#answer {
-  margin-top: 20px;
-  background: #eee;
-  padding: 10px;
-  border-radius: 6px;
-} */
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  font-family: sans-serif;
-  background: #f4f4f4;
-  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f5f7fa;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .container {
-  max-width: 600px;
-  width: 100%;
   background: white;
-  padding: 30px;
+  padding: 30px 25px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
 }
 
 textarea {
   width: 100%;
-  height: 150px; /* Bigger height */
-  font-size: 1rem; /* Larger text */
-  padding: 15px; /* More padding */
-  margin-bottom: 15px;
-  border-radius: 8px;
+  height: 160px;
+  font-size: 1rem;
+  padding: 15px;
   border: 1px solid #ccc;
+  border-radius: 8px;
   resize: vertical;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
 }
 
 button {
-  padding: 12px 24px;
+  display: block;
+  width: 100%;
+  padding: 12px;
   font-size: 1rem;
-  font-weight: bold;
-  background: #333;
+  font-weight: 600;
+  background: #4a90e2;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background: #555;
+  background: #357ac9;
 }
 
 #answer {
-  margin-top: 20px;
-  background: #eee;
+  margin-top: 25px;
+  background: #f0f0f0;
   padding: 15px;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
   white-space: pre-wrap;
+  min-height: 50px;
 }
-
