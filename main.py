@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 from app.rag import answer_question
+import os
 
 
 def load_documents_on_startup():
@@ -65,7 +66,5 @@ if __name__ == "__main__":
     print("Loading documents on startup...")
     load_documents_on_startup()
     
-    # For deployment
-    port = int(os.environ.get("PORT", 5000))
-    print(f"Starting Flask app on port {port}")
+    port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port, debug=False)
