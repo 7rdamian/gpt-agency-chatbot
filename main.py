@@ -64,5 +64,8 @@ def ask():
 if __name__ == "__main__":
     print("Loading documents on startup...")
     load_documents_on_startup()
-
-    app.run(debug=True)
+    
+    # For deployment
+    port = int(os.environ.get("PORT", 5000))
+    print(f"Starting Flask app on port {port}")
+    app.run(host="0.0.0.0", port=port, debug=False)
