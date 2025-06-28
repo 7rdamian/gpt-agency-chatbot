@@ -47,8 +47,8 @@ python main.py
 - Text files with your company documents
 
 ## Technology used
-Python, Flask - for the web server
-LangChain - for connecting everything together
-ChromaDB - for storing document information
-Together.ai - for the AI that answers questions
-HuggingFace - for understanding the documents
+- Python, Flask - for the web server
+- LangChain - for connecting everything together
+- ChromaDB - for storing document information
+- Together.ai - for the AI that answers questions
+- HuggingFace - for understanding the documents
