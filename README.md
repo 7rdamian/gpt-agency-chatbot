@@ -1,95 +1,54 @@
-# RAG Chatbot with Together.ai and Flask
+# AI-Powered Internal Documentation Assistant
 
-This is a Retrieval-Augmented Generation (RAG) chatbot that allows users to upload documents, embed them in a vector database, and then ask questions based on the content. The chatbot uses HuggingFace embeddings and a Together.ai language model (LLaMA 3) to generate accurate, context-aware answers.
+This is a web application that helps GPT Agency employees ask questions about company documents. It uses AI to read documents and answer questions.
 
-## Requirements
+## What it does
 
-Python 3.9+
-Free Together.ai API key
-One or more plain text documents (UTF-8 encoded)
+- Reads all .txt files from a documents folder when you start the app
+- Stores the document information in a database 
+- Lets users ask questions on a web page
+- Uses AI to give answers based on the documents
 
+## How to use it
 
-## Features
-
-- Upload and embed custom documents
-- Chunk and store documents using ChromaDB vector store
-- Ask questions and retrieve relevant information using semantic search
-- Powered by Together.ai’s LLaMA 3 (70B) model
-- Simple Flask front-end
-- Python back-end using LangChain
-
-
-## Tech Stack
-
-| Part              | Library / Tool                          |
-|-------------------|------------------------------------------|
-| Embeddings        | `intfloat/multilingual-e5-base` via HuggingFace |
-| Vector Store      | ChromaDB                                 |
-| Language Model    | LLaMA 3 (70B) via Together.ai            |
-| Backend Framework | Flask                                    |
-| LLM Framework     | LangChain                                |
-| Frontend          | HTML/CSS                                 |
-
----
-
-## How It Works
-
-1. **Document Loading**  
-   Place your plain text file in `user_documents.txt`.
-
-2. **Embedding & Vectorization**  
-   Run `load_docs.py` to:
-   - Read and chunk your text
-   - Convert text chunks to embeddings
-   - Store embeddings in a ChromaDB vector store
-
-3. **User Interaction**
-   - The user types a question into the Flask web form.
-   - The question is sent to the RAG pipeline.
-   - LangChain retrieves relevant document chunks.
-   - The full prompt (question + context) is sent to Together.ai.
-   - The model generates an answer, which is shown on the page.
-
-
-## 🧑‍💻 Setup Instructions
-
-### Clone the Repo
-
+### Step 1: Get the code
 ```bash
-git clone https://github.com/7rdamian/document-retrieval-chatbot.git
+git clone https://github.com/7rdamian/gpt-agency-chatbot.git
+cd gpt-agency-chatbot
 ```
 
-### Create a .env file in the root directory: 
-
-TOGETHER_API_KEY=your_api_key_here
-You can get a free Together.ai key here: https://together.ai
-
-### It's recommended to use a virtual environment:
-
+### Step 2: Install Python packages
 ```bash
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 ```
 
-### Make sure you have a text file named user_documents.txt in the project folder. Then run:
+### Step 3: Add your documents
+Put your .txt files in the docs/ folder. The app will read all of them automatically.
 
-```bash
-python app/load_docs.py
-```
+### Step 4: Create a together.ai free account
+- Go to https://www.together.ai and create a free account
+- Go to their list of models and pick "Llama-3.3-70B-Instruct-Turbo-Free"
+- Copy your api key and paste it into a .env file inside the project folder like this: TOGETHER_API_KEY=[your-api-key-here]
 
-### Run the Web App:
-
+### Step 5: Run the app
 ```bash
 python main.py
 ```
 
-### Then visit http://127.0.0.1:5000 in your browser.
+### Step 6: Use it
+- Open your web browser
+- Go to http://127.0.0.1:5000
+- Type your question in the box
+- Click Submit
 
-It should look something like this:
-![Chatbot UI](docs/image.png)
+## What you need
+- Python 3.7 or newer
+- Internet connection (for downloading AI models)
+- Text files with your company documents
 
-
-## Credits:
-
-Built with LangChain, ChromaDB, and Together.ai
+## Technology used
+Python, Flask - for the web server
+LangChain - for connecting everything together
+ChromaDB - for storing document information
+Together.ai - for the AI that answers questions
+HuggingFace - for understanding the documents
